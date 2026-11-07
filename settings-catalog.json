@@ -1,0 +1,1060 @@
+{
+  "catalog_version": 2,
+  "default_context": {
+    "vscode_version": "1.143.1",
+    "platform": "linux",
+    "environment": "desktop",
+    "values": "Verified definition defaults, not personal configured values. Entries marked inherit deliberately have no fixed value; their effective value comes from the theme or another setting. Profiles, policies, extensions, language overrides, and other platforms may change effective defaults."
+  },
+  "setting_contract": {
+    "identity": "A setting is identified by settings_name together with settings_path, which defaults to an empty array. Repeated names with different paths are intentional.",
+    "settings_path": "An array of literal object-property keys inside the named setting. Dots inside a key are not path separators.",
+    "settings_value_mode": "Absent or value means an explicit typed value. inherit means no override and requires settings_value to be null. A null value without inherit remains a genuine explicit null.",
+    "inherit_behavior": "When applying inherit, remove only the targeted override at the selected configuration scope. For an empty path, remove the setting at that scope. Never write the inheritance sentinel as a null override.",
+    "merge_behavior": "When applying a nested value, preserve all unrelated properties of the containing setting. Reject incompatible object shapes rather than replacing them silently. For token groups, promote an existing color string to an object with foreground before adding style properties.",
+    "theme_scope": "Customization paths here target global overrides. Theme-specific overrides may take precedence and are preserved. Editing theme-specific paths is not yet supported.",
+    "settings_control": "A proposed GUI control, not an implemented widget. color accepts hexadecimal RGB or RGBA colors; font selects a font family; select uses settings_options; text accepts free text.",
+    "scope": "The extension applies catalog edits to the active user profile and previews supported visual choices. Presets are registered for native Settings Sync. Exporting a named theme extension and theme-specific editing are not implemented."
+  },
+  "definition_sources": {
+    "vscode": {
+      "version": "1.143.1",
+      "source": "Installed VS Code configuration definitions in out/vs/workbench/workbench.desktop.main.js"
+    },
+    "git": {
+      "version": "10.0.0",
+      "source": "Installed built-in Git extension: extensions/git/package.json"
+    },
+    "languages": {
+      "version": "10.0.0",
+      "source": "Installed built-in TypeScript and JavaScript extension: extensions/typescript-language-features/package.json"
+    },
+    "remote_ssh": {
+      "version": "0.128.0",
+      "source": "Installed Remote - SSH extension configuration definitions"
+    },
+    "platformio": {
+      "version": "3.3.4",
+      "source": "https://raw.githubusercontent.com/platformio/platformio-vscode-ide/3af388134660f5c347be18686cbd349cca91c235/package.json",
+      "availability": "Not installed locally; defaults verified from the official extension manifest."
+    }
+  },
+  "categories": {
+    "Visual interface": {
+      "description": "The appearance and layout of the VS Code window.",
+      "settings": [],
+      "children": {
+        "Appearance": {
+          "description": "Themes, icons, and interface colors.",
+          "settings": [],
+          "children": {
+            "Themes": {
+              "description": "Choose a base theme and file icons. Individual color overrides are organized below by interface region.",
+              "settings": [
+                {
+                  "settings_name": "workbench.colorTheme",
+                  "settings_value": "Dark 2026",
+                  "settings_human_read": "Color theme",
+                  "settings_description": "Choose the overall interface color theme. Available themes depend on installed extensions."
+                },
+                {
+                  "settings_name": "workbench.iconTheme",
+                  "settings_value": "vs-seti",
+                  "settings_human_read": "File icon theme",
+                  "settings_description": "Choose the icons used to represent files and folders."
+                }
+              ],
+              "children": {}
+            },
+            "Interface colors": {
+              "description": "Override individual background and foreground colors, or inherit them from the active theme.",
+              "settings": [],
+              "children": {
+                "Editor surface": {
+                  "description": "Colors of the editing surface, selection, current line, and cursor.",
+                  "settings": [
+                    {
+                      "settings_name": "workbench.colorCustomizations",
+                      "settings_path": ["editor.background"],
+                      "settings_value": null,
+                      "settings_value_mode": "inherit",
+                      "settings_human_read": "Editor background",
+                      "settings_description": "Choose the editor background color, or inherit it from the theme.",
+                      "settings_control": "color"
+                    },
+                    {
+                      "settings_name": "workbench.colorCustomizations",
+                      "settings_path": ["editor.foreground"],
+                      "settings_value": null,
+                      "settings_value_mode": "inherit",
+                      "settings_human_read": "Editor default text",
+                      "settings_description": "Choose the default editor text color. Syntax highlighting can assign different colors to code.",
+                      "settings_control": "color"
+                    },
+                    {
+                      "settings_name": "workbench.colorCustomizations",
+                      "settings_path": ["editor.selectionBackground"],
+                      "settings_value": null,
+                      "settings_value_mode": "inherit",
+                      "settings_human_read": "Selection background",
+                      "settings_description": "Choose the background of selected text. Transparency can keep highlighting visible beneath the selection.",
+                      "settings_control": "color"
+                    },
+                    {
+                      "settings_name": "workbench.colorCustomizations",
+                      "settings_path": ["editor.lineHighlightBackground"],
+                      "settings_value": null,
+                      "settings_value_mode": "inherit",
+                      "settings_human_read": "Current-line background",
+                      "settings_description": "Choose the background highlight for the current line.",
+                      "settings_control": "color"
+                    },
+                    {
+                      "settings_name": "workbench.colorCustomizations",
+                      "settings_path": ["editorCursor.foreground"],
+                      "settings_value": null,
+                      "settings_value_mode": "inherit",
+                      "settings_human_read": "Editor cursor color",
+                      "settings_description": "Choose the color of the editor cursor.",
+                      "settings_control": "color"
+                    }
+                  ],
+                  "children": {}
+                },
+                "Sidebar": {
+                  "description": "Backgrounds and text in the sidebar and its section headings.",
+                  "settings": [
+                    {
+                      "settings_name": "workbench.colorCustomizations",
+                      "settings_path": ["sideBar.background"],
+                      "settings_value": null,
+                      "settings_value_mode": "inherit",
+                      "settings_human_read": "Sidebar background",
+                      "settings_description": "Choose the background of the sidebar.",
+                      "settings_control": "color"
+                    },
+                    {
+                      "settings_name": "workbench.colorCustomizations",
+                      "settings_path": ["sideBar.foreground"],
+                      "settings_value": null,
+                      "settings_value_mode": "inherit",
+                      "settings_human_read": "Sidebar text",
+                      "settings_description": "Choose the default sidebar text color. Specialized elements may have their own colors.",
+                      "settings_control": "color"
+                    },
+                    {
+                      "settings_name": "workbench.colorCustomizations",
+                      "settings_path": ["sideBarSectionHeader.background"],
+                      "settings_value": null,
+                      "settings_value_mode": "inherit",
+                      "settings_human_read": "Sidebar heading background",
+                      "settings_description": "Choose the background of sidebar section headings.",
+                      "settings_control": "color"
+                    },
+                    {
+                      "settings_name": "workbench.colorCustomizations",
+                      "settings_path": ["sideBarSectionHeader.foreground"],
+                      "settings_value": null,
+                      "settings_value_mode": "inherit",
+                      "settings_human_read": "Sidebar heading text",
+                      "settings_description": "Choose the text color of sidebar section headings.",
+                      "settings_control": "color"
+                    }
+                  ],
+                  "children": {}
+                },
+                "Tabs": {
+                  "description": "Colors that distinguish active and inactive editor tabs.",
+                  "settings": [
+                    {
+                      "settings_name": "workbench.colorCustomizations",
+                      "settings_path": ["tab.activeBackground"],
+                      "settings_value": null,
+                      "settings_value_mode": "inherit",
+                      "settings_human_read": "Active tab background",
+                      "settings_description": "Choose the background of the active editor tab.",
+                      "settings_control": "color"
+                    },
+                    {
+                      "settings_name": "workbench.colorCustomizations",
+                      "settings_path": ["tab.activeForeground"],
+                      "settings_value": null,
+                      "settings_value_mode": "inherit",
+                      "settings_human_read": "Active tab text",
+                      "settings_description": "Choose the text color of the active editor tab.",
+                      "settings_control": "color"
+                    },
+                    {
+                      "settings_name": "workbench.colorCustomizations",
+                      "settings_path": ["tab.inactiveBackground"],
+                      "settings_value": null,
+                      "settings_value_mode": "inherit",
+                      "settings_human_read": "Inactive tab background",
+                      "settings_description": "Choose the background of inactive editor tabs.",
+                      "settings_control": "color"
+                    },
+                    {
+                      "settings_name": "workbench.colorCustomizations",
+                      "settings_path": ["tab.inactiveForeground"],
+                      "settings_value": null,
+                      "settings_value_mode": "inherit",
+                      "settings_human_read": "Inactive tab text",
+                      "settings_description": "Choose the text color of inactive editor tabs.",
+                      "settings_control": "color"
+                    }
+                  ],
+                  "children": {}
+                },
+                "Status bar": {
+                  "description": "Default status-bar colors. Debugging and windows without an open folder can use separate colors.",
+                  "settings": [
+                    {
+                      "settings_name": "workbench.colorCustomizations",
+                      "settings_path": ["statusBar.background"],
+                      "settings_value": null,
+                      "settings_value_mode": "inherit",
+                      "settings_human_read": "Status bar background",
+                      "settings_description": "Choose the default status-bar background.",
+                      "settings_control": "color"
+                    },
+                    {
+                      "settings_name": "workbench.colorCustomizations",
+                      "settings_path": ["statusBar.foreground"],
+                      "settings_value": null,
+                      "settings_value_mode": "inherit",
+                      "settings_human_read": "Status bar text",
+                      "settings_description": "Choose the default text color in the status bar.",
+                      "settings_control": "color"
+                    }
+                  ],
+                  "children": {}
+                }
+              }
+            },
+            "Code highlighting": {
+              "description": "Customize syntax colors and styles. Semantic highlighting can override syntax colors when a language provider supplies more specific information.",
+              "settings": [],
+              "children": {
+                "Syntax groups": {
+                  "description": "Colors and styles for broad syntax groups. Supported styles include italic, bold, underline, and strikethrough; an empty style explicitly clears styling rather than inheriting.",
+                  "settings": [
+                    {
+                      "settings_name": "editor.tokenColorCustomizations",
+                      "settings_path": ["comments", "foreground"],
+                      "settings_value": null,
+                      "settings_value_mode": "inherit",
+                      "settings_human_read": "Comment color",
+                      "settings_description": "Choose the text color of comments.",
+                      "settings_control": "color"
+                    },
+                    {
+                      "settings_name": "editor.tokenColorCustomizations",
+                      "settings_path": ["comments", "fontStyle"],
+                      "settings_value": null,
+                      "settings_value_mode": "inherit",
+                      "settings_human_read": "Comment style",
+                      "settings_description": "Choose font styles for comments, or inherit their styling.",
+                      "settings_control": "text"
+                    },
+                    {
+                      "settings_name": "editor.tokenColorCustomizations",
+                      "settings_path": ["strings", "foreground"],
+                      "settings_value": null,
+                      "settings_value_mode": "inherit",
+                      "settings_human_read": "String color",
+                      "settings_description": "Choose the text color of strings.",
+                      "settings_control": "color"
+                    },
+                    {
+                      "settings_name": "editor.tokenColorCustomizations",
+                      "settings_path": ["strings", "fontStyle"],
+                      "settings_value": null,
+                      "settings_value_mode": "inherit",
+                      "settings_human_read": "String style",
+                      "settings_description": "Choose font styles for strings, or inherit their styling.",
+                      "settings_control": "text"
+                    },
+                    {
+                      "settings_name": "editor.tokenColorCustomizations",
+                      "settings_path": ["keywords", "foreground"],
+                      "settings_value": null,
+                      "settings_value_mode": "inherit",
+                      "settings_human_read": "Keyword color",
+                      "settings_description": "Choose the text color of language keywords.",
+                      "settings_control": "color"
+                    },
+                    {
+                      "settings_name": "editor.tokenColorCustomizations",
+                      "settings_path": ["keywords", "fontStyle"],
+                      "settings_value": null,
+                      "settings_value_mode": "inherit",
+                      "settings_human_read": "Keyword style",
+                      "settings_description": "Choose font styles for keywords, or inherit their styling.",
+                      "settings_control": "text"
+                    },
+                    {
+                      "settings_name": "editor.tokenColorCustomizations",
+                      "settings_path": ["numbers", "foreground"],
+                      "settings_value": null,
+                      "settings_value_mode": "inherit",
+                      "settings_human_read": "Number color",
+                      "settings_description": "Choose the text color of numeric literals.",
+                      "settings_control": "color"
+                    },
+                    {
+                      "settings_name": "editor.tokenColorCustomizations",
+                      "settings_path": ["numbers", "fontStyle"],
+                      "settings_value": null,
+                      "settings_value_mode": "inherit",
+                      "settings_human_read": "Number style",
+                      "settings_description": "Choose font styles for numeric literals, or inherit their styling.",
+                      "settings_control": "text"
+                    },
+                    {
+                      "settings_name": "editor.tokenColorCustomizations",
+                      "settings_path": ["types", "foreground"],
+                      "settings_value": null,
+                      "settings_value_mode": "inherit",
+                      "settings_human_read": "Type color",
+                      "settings_description": "Choose the text color of type names.",
+                      "settings_control": "color"
+                    },
+                    {
+                      "settings_name": "editor.tokenColorCustomizations",
+                      "settings_path": ["types", "fontStyle"],
+                      "settings_value": null,
+                      "settings_value_mode": "inherit",
+                      "settings_human_read": "Type style",
+                      "settings_description": "Choose font styles for type names, or inherit their styling.",
+                      "settings_control": "text"
+                    },
+                    {
+                      "settings_name": "editor.tokenColorCustomizations",
+                      "settings_path": ["functions", "foreground"],
+                      "settings_value": null,
+                      "settings_value_mode": "inherit",
+                      "settings_human_read": "Function color",
+                      "settings_description": "Choose the text color of function names.",
+                      "settings_control": "color"
+                    },
+                    {
+                      "settings_name": "editor.tokenColorCustomizations",
+                      "settings_path": ["functions", "fontStyle"],
+                      "settings_value": null,
+                      "settings_value_mode": "inherit",
+                      "settings_human_read": "Function style",
+                      "settings_description": "Choose font styles for function names, or inherit their styling.",
+                      "settings_control": "text"
+                    },
+                    {
+                      "settings_name": "editor.tokenColorCustomizations",
+                      "settings_path": ["variables", "foreground"],
+                      "settings_value": null,
+                      "settings_value_mode": "inherit",
+                      "settings_human_read": "Variable color",
+                      "settings_description": "Choose the text color of variable names.",
+                      "settings_control": "color"
+                    },
+                    {
+                      "settings_name": "editor.tokenColorCustomizations",
+                      "settings_path": ["variables", "fontStyle"],
+                      "settings_value": null,
+                      "settings_value_mode": "inherit",
+                      "settings_human_read": "Variable style",
+                      "settings_description": "Choose font styles for variable names, or inherit their styling.",
+                      "settings_control": "text"
+                    }
+                  ],
+                  "children": {}
+                },
+                "Semantic highlighting": {
+                  "description": "More specific highlighting based on language understanding. These rules depend on the token types supplied by the active language provider.",
+                  "settings": [
+                    {
+                      "settings_name": "editor.semanticTokenColorCustomizations",
+                      "settings_path": ["enabled"],
+                      "settings_value": null,
+                      "settings_value_mode": "inherit",
+                      "settings_human_read": "Enable semantic highlighting",
+                      "settings_description": "Enable or disable semantic highlighting, or inherit the existing preference.",
+                      "settings_control": "select",
+                      "settings_options": [true, false]
+                    },
+                    {
+                      "settings_name": "editor.semanticTokenColorCustomizations",
+                      "settings_path": ["rules", "variable", "foreground"],
+                      "settings_value": null,
+                      "settings_value_mode": "inherit",
+                      "settings_human_read": "Semantic variable color",
+                      "settings_description": "Choose the color of tokens identified as variables by the language provider.",
+                      "settings_control": "color"
+                    },
+                    {
+                      "settings_name": "editor.semanticTokenColorCustomizations",
+                      "settings_path": ["rules", "function", "foreground"],
+                      "settings_value": null,
+                      "settings_value_mode": "inherit",
+                      "settings_human_read": "Semantic function color",
+                      "settings_description": "Choose the color of tokens identified as functions by the language provider.",
+                      "settings_control": "color"
+                    }
+                  ],
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "Window layout": {
+          "description": "Position and visibility of the main interface regions.",
+          "settings": [
+            {
+              "settings_name": "workbench.sideBar.location",
+              "settings_value": "left",
+              "settings_human_read": "Primary sidebar position",
+              "settings_description": "Place the primary sidebar on the left or right of the editor."
+            },
+            {
+              "settings_name": "workbench.statusBar.visible",
+              "settings_value": true,
+              "settings_human_read": "Show status bar",
+              "settings_description": "Show the bar containing status information at the bottom of the window."
+            }
+          ],
+          "children": {}
+        }
+      }
+    },
+    "AI and chats": {
+      "description": "AI-assisted workflows and conversations. This starting selection covers code blocks in chat, not provider-specific model configuration.",
+      "settings": [],
+      "children": {
+        "Conversation appearance": {
+          "description": "How code is displayed inside conversations.",
+          "settings": [],
+          "children": {
+            "Code blocks": {
+              "description": "Font and wrapping preferences for code shown in chat.",
+              "settings": [
+                {
+                  "settings_name": "chat.editor.fontSize",
+                  "settings_value": 14,
+                  "settings_human_read": "Chat code font size",
+                  "settings_description": "Set the text size of code blocks shown in chat."
+                },
+                {
+                  "settings_name": "chat.editor.fontFamily",
+                  "settings_value": "default",
+                  "settings_human_read": "Chat code font",
+                  "settings_description": "Choose the font for chat code blocks, or keep the default font selection.",
+                  "settings_control": "font"
+                },
+                {
+                  "settings_name": "chat.editor.fontWeight",
+                  "settings_value": "default",
+                  "settings_human_read": "Chat code font weight",
+                  "settings_description": "Choose the font weight for chat code blocks, or keep the default weight.",
+                  "settings_control": "text"
+                },
+                {
+                  "settings_name": "chat.editor.wordWrap",
+                  "settings_value": "off",
+                  "settings_human_read": "Wrap chat code lines",
+                  "settings_description": "Choose whether long lines in chat code blocks wrap onto another line."
+                }
+              ],
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "Source control": {
+      "description": "Version-control workflows, starting with the built-in Git integration.",
+      "settings": [],
+      "children": {
+        "Git integration": {
+          "description": "Enable Git support and organize repository actions.",
+          "settings": [
+            {
+              "settings_name": "git.enabled",
+              "settings_value": true,
+              "settings_human_read": "Enable Git integration",
+              "settings_description": "Enable the built-in Git features for repositories."
+            }
+          ],
+          "children": {
+            "Fetching and synchronization": {
+              "description": "Retrieve remote changes and confirm synchronization actions.",
+              "settings": [
+                {
+                  "settings_name": "git.autofetch",
+                  "settings_value": false,
+                  "settings_human_read": "Fetch remote changes automatically",
+                  "settings_description": "Choose whether to fetch remote changes automatically. This also supports fetching from all remotes, so its control needs more than a checkbox."
+                },
+                {
+                  "settings_name": "git.confirmSync",
+                  "settings_value": true,
+                  "settings_human_read": "Confirm synchronization",
+                  "settings_description": "Request confirmation before synchronizing a repository with its remote."
+                }
+              ],
+              "children": {}
+            },
+            "Committing": {
+              "description": "Control how changes are prepared for a commit.",
+              "settings": [
+                {
+                  "settings_name": "git.enableSmartCommit",
+                  "settings_value": false,
+                  "settings_human_read": "Allow smart commits",
+                  "settings_description": "Allow committing all changes when no changes have been staged."
+                }
+              ],
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "Terminals": {
+      "description": "The appearance and behavior of integrated terminals.",
+      "settings": [],
+      "children": {
+        "Appearance": {
+          "description": "Terminal text and cursor presentation.",
+          "settings": [
+            {
+              "settings_name": "terminal.integrated.fontFamily",
+              "settings_value": null,
+              "settings_value_mode": "inherit",
+              "settings_human_read": "Terminal font",
+              "settings_description": "Choose the terminal font, or inherit the editor font.",
+              "settings_control": "font"
+            },
+            {
+              "settings_name": "terminal.integrated.fontSize",
+              "settings_value": 14,
+              "settings_human_read": "Terminal font size",
+              "settings_description": "Set the text size in integrated terminals."
+            },
+            {
+              "settings_name": "terminal.integrated.fontWeight",
+              "settings_value": "normal",
+              "settings_human_read": "Terminal font weight",
+              "settings_description": "Choose the weight of normal terminal text.",
+              "settings_control": "text"
+            },
+            {
+              "settings_name": "terminal.integrated.cursorStyle",
+              "settings_value": "block",
+              "settings_human_read": "Terminal cursor shape",
+              "settings_description": "Choose a block, line, or underline cursor."
+            }
+          ],
+          "children": {
+            "Colors": {
+              "description": "Terminal colors independent of editor text. Individual ANSI palette colors can be added later.",
+              "settings": [
+                {
+                  "settings_name": "workbench.colorCustomizations",
+                  "settings_path": ["terminal.background"],
+                  "settings_value": null,
+                  "settings_value_mode": "inherit",
+                  "settings_human_read": "Terminal background",
+                  "settings_description": "Choose the terminal background, or retain the theme's inherited background.",
+                  "settings_control": "color"
+                },
+                {
+                  "settings_name": "workbench.colorCustomizations",
+                  "settings_path": ["terminal.foreground"],
+                  "settings_value": null,
+                  "settings_value_mode": "inherit",
+                  "settings_human_read": "Terminal default text",
+                  "settings_description": "Choose the default terminal text color. Programs can still use ANSI colors.",
+                  "settings_control": "color"
+                },
+                {
+                  "settings_name": "workbench.colorCustomizations",
+                  "settings_path": ["terminalCursor.foreground"],
+                  "settings_value": null,
+                  "settings_value_mode": "inherit",
+                  "settings_human_read": "Terminal cursor color",
+                  "settings_description": "Choose the terminal cursor color.",
+                  "settings_control": "color"
+                }
+              ],
+              "children": {}
+            }
+          }
+        },
+        "Output history": {
+          "description": "How much terminal output remains available.",
+          "settings": [
+            {
+              "settings_name": "terminal.integrated.scrollback",
+              "settings_value": 1000,
+              "settings_human_read": "Retained output lines",
+              "settings_description": "Set how many lines of previous terminal output can be scrolled back through."
+            }
+          ],
+          "children": {}
+        }
+      }
+    },
+    "Editor": {
+      "description": "Writing and reading text and code, independent of a particular language.",
+      "settings": [],
+      "children": {
+        "Text appearance": {
+          "description": "Font choices and text presentation.",
+          "settings": [],
+          "children": {
+            "Fonts": {
+              "description": "Font family, size, and ligatures.",
+              "settings": [
+                {
+                  "settings_name": "editor.fontFamily",
+                  "settings_value": "'Droid Sans Mono', monospace",
+                  "settings_human_read": "Editor font",
+                  "settings_description": "Choose the editor font and its fallback fonts. Font availability depends on the computer.",
+                  "settings_control": "font"
+                },
+                {
+                  "settings_name": "editor.fontSize",
+                  "settings_value": 14,
+                  "settings_human_read": "Editor font size",
+                  "settings_description": "Set the size of text in the editor."
+                },
+                {
+                  "settings_name": "editor.fontWeight",
+                  "settings_value": "normal",
+                  "settings_human_read": "Editor font weight",
+                  "settings_description": "Choose the weight of editor text.",
+                  "settings_control": "text"
+                },
+                {
+                  "settings_name": "editor.fontLigatures",
+                  "settings_value": false,
+                  "settings_human_read": "Font ligatures",
+                  "settings_description": "Control whether supported character combinations are drawn as combined glyphs. Advanced values can select individual font features."
+                }
+              ],
+              "children": {}
+            }
+          }
+        },
+        "Indentation": {
+          "description": "Preferred spacing for indentation. Automatic indentation detection can override these preferences for an opened file.",
+          "settings": [
+            {
+              "settings_name": "editor.tabSize",
+              "settings_value": 4,
+              "settings_human_read": "Tab width",
+              "settings_description": "Set how many spaces a tab represents."
+            },
+            {
+              "settings_name": "editor.insertSpaces",
+              "settings_value": true,
+              "settings_human_read": "Indent with spaces",
+              "settings_description": "Insert spaces rather than a tab character when indenting."
+            }
+          ],
+          "children": {}
+        },
+        "Reading and navigation": {
+          "description": "Keep code readable and make large files easier to navigate.",
+          "settings": [
+            {
+              "settings_name": "editor.wordWrap",
+              "settings_value": "off",
+              "settings_human_read": "Wrap editor lines",
+              "settings_description": "Choose whether long lines remain unwrapped or wrap at the viewport, a chosen column, or a combination of both."
+            },
+            {
+              "settings_name": "editor.minimap.enabled",
+              "settings_value": true,
+              "settings_human_read": "Show minimap",
+              "settings_description": "Show a miniature overview of the current file beside the editor."
+            }
+          ],
+          "children": {}
+        }
+      }
+    },
+    "Extensions": {
+      "description": "General extension management. Settings for specific workflows belong in their workflow categories.",
+      "settings": [],
+      "children": {
+        "Updates": {
+          "description": "Checking for and installing extension updates.",
+          "settings": [
+            {
+              "settings_name": "extensions.autoUpdate",
+              "settings_value": "on",
+              "settings_human_read": "Automatic extension updates",
+              "settings_description": "Choose whether extensions update automatically."
+            },
+            {
+              "settings_name": "extensions.autoCheckUpdates",
+              "settings_value": true,
+              "settings_human_read": "Check for extension updates",
+              "settings_description": "Check automatically whether newer extension versions are available."
+            }
+          ],
+          "children": {}
+        }
+      }
+    },
+    "PlatformIO": {
+      "description": "Embedded-development preferences supplied by the PlatformIO IDE extension. These settings require that extension.",
+      "settings": [],
+      "children": {
+        "Toolchain": {
+          "description": "Choose which Python interpreter and PlatformIO Core installation the extension uses.",
+          "settings": [
+            {
+              "settings_name": "platformio-ide.useBuiltinPython",
+              "settings_value": true,
+              "settings_human_read": "Use bundled Python",
+              "settings_description": "Use the portable Python interpreter supplied for PlatformIO when available."
+            },
+            {
+              "settings_name": "platformio-ide.useBuiltinPIOCore",
+              "settings_value": true,
+              "settings_human_read": "Use bundled PlatformIO Core",
+              "settings_description": "Use the PlatformIO Core installation managed by the extension."
+            },
+            {
+              "settings_name": "platformio-ide.useDevelopmentPIOCore",
+              "settings_value": false,
+              "settings_human_read": "Use development Core",
+              "settings_description": "Use a development version of PlatformIO Core rather than the stable version."
+            }
+          ],
+          "children": {}
+        },
+        "Projects": {
+          "description": "Project activation, configuration, and code indexing.",
+          "settings": [
+            {
+              "settings_name": "platformio-ide.activateProjectOnTextEditorChange",
+              "settings_value": false,
+              "settings_human_read": "Activate the project of the current editor",
+              "settings_description": "Automatically switch the active project to match the file being edited."
+            },
+            {
+              "settings_name": "platformio-ide.autoOpenPlatformIOIniFile",
+              "settings_value": true,
+              "settings_human_read": "Open project configuration automatically",
+              "settings_description": "Open the project's configuration file when no other editors are open."
+            },
+            {
+              "settings_name": "platformio-ide.autoRebuildAutocompleteIndex",
+              "settings_value": true,
+              "settings_human_read": "Refresh code completion automatically",
+              "settings_description": "Rebuild the project's code-completion index after configuration changes or library installations."
+            }
+          ],
+          "children": {
+            "Project tasks": {
+              "description": "Access to build, upload, and related project actions.",
+              "settings": [
+                {
+                  "settings_name": "platformio-ide.showEditorTitleShortcuts",
+                  "settings_value": true,
+                  "settings_human_read": "Show project action shortcuts",
+                  "settings_description": "Show shortcuts for build, upload, and other project actions in the editor title area."
+                },
+                {
+                  "settings_name": "platformio-ide.autoPreloadEnvTasks",
+                  "settings_value": false,
+                  "settings_human_read": "Preload all environment tasks",
+                  "settings_description": "Load tasks for every project environment automatically."
+                }
+              ],
+              "children": {}
+            }
+          }
+        },
+        "Serial monitor": {
+          "description": "Coordinate serial monitoring with uploading and testing.",
+          "settings": [
+            {
+              "settings_name": "platformio-ide.autoCloseSerialMonitor",
+              "settings_value": true,
+              "settings_human_read": "Close the monitor before device operations",
+              "settings_description": "Close the serial monitor automatically before uploading or testing."
+            },
+            {
+              "settings_name": "platformio-ide.reopenSerialMonitorDelay",
+              "settings_value": 0,
+              "settings_human_read": "Serial monitor reopening delay",
+              "settings_description": "Set the delay in milliseconds before the serial monitor reopens."
+            }
+          ],
+          "children": {}
+        }
+      }
+    },
+    "Files and folders": {
+      "description": "Browsing, saving, and managing files and folders.",
+      "settings": [],
+      "children": {
+        "Saving": {
+          "description": "Automatic saving and cleanup when saving files.",
+          "settings": [
+            {
+              "settings_name": "files.autoSave",
+              "settings_value": "off",
+              "settings_human_read": "Automatic saving",
+              "settings_description": "Choose whether files save automatically after a delay or when focus changes."
+            },
+            {
+              "settings_name": "files.autoSaveDelay",
+              "settings_value": 1000,
+              "settings_human_read": "Automatic saving delay",
+              "settings_description": "Set the delay in milliseconds when delayed automatic saving is selected."
+            },
+            {
+              "settings_name": "files.trimTrailingWhitespace",
+              "settings_value": false,
+              "settings_human_read": "Remove trailing whitespace",
+              "settings_description": "Remove unnecessary whitespace at the ends of lines when saving."
+            }
+          ],
+          "children": {}
+        },
+        "File explorer": {
+          "description": "File-management actions in the explorer.",
+          "settings": [
+            {
+              "settings_name": "explorer.confirmDelete",
+              "settings_value": true,
+              "settings_human_read": "Confirm file deletion",
+              "settings_description": "Request confirmation before deleting files through the explorer."
+            }
+          ],
+          "children": {}
+        }
+      }
+    },
+    "Search": {
+      "description": "Finding text across files and choosing which files are searched.",
+      "settings": [],
+      "children": {
+        "Text matching": {
+          "description": "How searches handle letter case.",
+          "settings": [
+            {
+              "settings_name": "search.smartCase",
+              "settings_value": false,
+              "settings_human_read": "Automatic case-sensitive matching",
+              "settings_description": "Use case-sensitive matching when a search contains uppercase letters, unless case matching is explicitly selected."
+            }
+          ],
+          "children": {}
+        },
+        "Files included": {
+          "description": "How ignore rules and linked files affect searches.",
+          "settings": [
+            {
+              "settings_name": "search.useIgnoreFiles",
+              "settings_value": true,
+              "settings_human_read": "Respect ignore files",
+              "settings_description": "Exclude files covered by project ignore rules when searching."
+            },
+            {
+              "settings_name": "search.followSymlinks",
+              "settings_value": true,
+              "settings_human_read": "Follow symbolic links",
+              "settings_description": "Include files reached through symbolic links in searches."
+            }
+          ],
+          "children": {}
+        }
+      }
+    },
+    "Languages": {
+      "description": "Language-specific behavior, separate from general editor preferences.",
+      "settings": [],
+      "children": {
+        "JavaScript and TypeScript": {
+          "description": "Shared behavior provided by the built-in JavaScript and TypeScript language extension.",
+          "settings": [],
+          "children": {
+            "Imports": {
+              "description": "Keep import paths aligned with file moves.",
+              "settings": [
+                {
+                  "settings_name": "js/ts.updateImportsOnFileMove.enabled",
+                  "settings_value": "prompt",
+                  "settings_human_read": "Update imports after moving files",
+                  "settings_description": "Choose whether import paths update automatically, after confirmation, or not at all when files move."
+                }
+              ],
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "Run and debug": {
+      "description": "Running programs and inspecting their behavior during debugging.",
+      "settings": [],
+      "children": {
+        "Debugging interface": {
+          "description": "When debugging controls appear and where they are shown.",
+          "settings": [
+            {
+              "settings_name": "debug.openDebug",
+              "settings_value": "openOnDebugBreak",
+              "settings_human_read": "Open the debugging view",
+              "settings_description": "Choose when the debugging view opens, such as when execution pauses."
+            },
+            {
+              "settings_name": "debug.toolBarLocation",
+              "settings_value": "floating",
+              "settings_human_read": "Debug toolbar position",
+              "settings_description": "Choose where debugging controls appear or hide them."
+            },
+            {
+              "settings_name": "debug.inlineValues",
+              "settings_value": "auto",
+              "settings_human_read": "Show values beside code",
+              "settings_description": "Choose whether runtime values appear beside code, with automatic behavior depending on language support."
+            }
+          ],
+          "children": {}
+        }
+      }
+    },
+    "Tasks and automation": {
+      "description": "Build tasks and other repeatable automated actions.",
+      "settings": [],
+      "children": {
+        "Task discovery and execution": {
+          "description": "Find available tasks and prepare files before running them.",
+          "settings": [
+            {
+              "settings_name": "task.autoDetect",
+              "settings_value": "on",
+              "settings_human_read": "Detect tasks automatically",
+              "settings_description": "Allow task providers to discover available tasks automatically."
+            },
+            {
+              "settings_name": "task.saveBeforeRun",
+              "settings_value": "always",
+              "settings_human_read": "Save files before running tasks",
+              "settings_description": "Choose whether to save files before a task starts, ask first, or leave files unsaved."
+            }
+          ],
+          "children": {}
+        }
+      }
+    },
+    "Notifications and sounds": {
+      "description": "Confirmation prompts and audible feedback.",
+      "settings": [],
+      "children": {
+        "Confirmations": {
+          "description": "Confirmation before closing the window. File and repository confirmations remain in their workflow categories.",
+          "settings": [
+            {
+              "settings_name": "window.confirmBeforeClose",
+              "settings_value": "never",
+              "settings_human_read": "Confirm before closing",
+              "settings_description": "Choose whether closing the window requires confirmation, including an option for keyboard-triggered closing only."
+            }
+          ],
+          "children": {}
+        },
+        "Sound feedback": {
+          "description": "Volume of accessibility sound signals; this does not enable individual signals.",
+          "settings": [
+            {
+              "settings_name": "accessibility.signalOptions.volume",
+              "settings_value": 70,
+              "settings_human_read": "Signal volume",
+              "settings_description": "Set the volume of accessibility sound signals from zero to one hundred."
+            }
+          ],
+          "children": {}
+        }
+      }
+    },
+    "Accessibility": {
+      "description": "Screen-reader support and visual comfort.",
+      "settings": [],
+      "children": {
+        "Screen readers": {
+          "description": "Editor behavior for assistive reading tools.",
+          "settings": [
+            {
+              "settings_name": "editor.accessibilitySupport",
+              "settings_value": "auto",
+              "settings_human_read": "Screen-reader support",
+              "settings_description": "Detect screen-reader use automatically, or explicitly enable or disable editor accessibility support."
+            }
+          ],
+          "children": {}
+        },
+        "Visual comfort": {
+          "description": "Reduce motion and transparency when needed.",
+          "settings": [
+            {
+              "settings_name": "workbench.reduceMotion",
+              "settings_value": "auto",
+              "settings_human_read": "Reduce interface motion",
+              "settings_description": "Choose whether interface motion is reduced, or follow the operating system's preference."
+            },
+            {
+              "settings_name": "workbench.reduceTransparency",
+              "settings_value": "off",
+              "settings_human_read": "Reduce interface transparency",
+              "settings_description": "Choose whether interface transparency is reduced, or follow the operating system's preference."
+            }
+          ],
+          "children": {}
+        }
+      }
+    },
+    "Remote development": {
+      "description": "Working with remote environments. This starting selection covers port restoration and SSH connections.",
+      "settings": [],
+      "children": {
+        "Ports": {
+          "description": "Restore forwarded ports after reconnecting.",
+          "settings": [
+            {
+              "settings_name": "remote.restoreForwardedPorts",
+              "settings_value": true,
+              "settings_human_read": "Restore forwarded ports",
+              "settings_description": "Restore previously forwarded ports when a remote connection is reopened."
+            }
+          ],
+          "children": {}
+        },
+        "SSH connections": {
+          "description": "Connection preferences supplied by the Remote - SSH extension.",
+          "settings": [
+            {
+              "settings_name": "remote.SSH.showLoginTerminal",
+              "settings_value": false,
+              "settings_human_read": "Show SSH login terminal",
+              "settings_description": "Show the terminal used during SSH login so connection prompts and progress are visible."
+            },
+            {
+              "settings_name": "remote.SSH.connectTimeout",
+              "settings_value": 15,
+              "settings_human_read": "SSH connection timeout",
+              "settings_description": "Set how many seconds to wait for an SSH connection."
+            }
+          ],
+          "children": {}
+        }
+      }
+    }
+  }
+}

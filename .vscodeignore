@@ -1,0 +1,12 @@
+.vscode/**
+test/**
+node_modules/**
+package-lock.json
+media/preview.html
+1streadme
+*.vsix
+.gitignore
+python_gui.py
+python-bridge.js
+**/__pycache__/**
+**/*.pyc

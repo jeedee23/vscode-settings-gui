@@ -1,0 +1,26 @@
+{
+  "name": "vscode-settings-gui",
+  "displayName": "Human Settings GUI",
+  "description": "A hierarchical settings editor with a live visual preview and synced presets.",
+  "version": "0.1.0",
+  "publisher": "jeedee23",
+  "repository": { "type": "git", "url": "https://github.com/jeedee23/vscode-settings-gui.git" },
+  "engines": { "vscode": "^1.100.0" },
+  "categories": ["Other"],
+  "main": "./extension.js",
+  "activationEvents": ["onCommand:humanSettings.open"],
+  "contributes": {
+    "commands": [
+      { "command": "humanSettings.open", "title": "Human Settings: Open Settings GUI" }
+    ]
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "check": "node --check extension.js && node --check catalog-model.js && node --check media/gui.js && node --check python-bridge.js",
+    "package": "vsce package --skip-license"
+  },
+  "devDependencies": { "@vscode/vsce": "^4.1.0" },
+  "overrides": {
+    "@vscode/vsce": { "minimatch": "^11.0.1" }
+  }
+}
